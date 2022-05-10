@@ -2,20 +2,22 @@ extends ../layouts/common
 block title 
     title Users Page
 block content
-    h1 This is users page
-    form(action='/users/search', method= 'GET')
-        input(type='text', name = 'q')
-        button Search
-    ul 
-        each user in users 
-            li
-                span= user.name 
-                span &nbsp;
-                a(href= '/users/' + user.id) Infor
-        else 
-            p There are no matching users
+    .container.mt-4
+        .d-flex.align-items-center.mr-4
+            a(class=' ml-4 btn btn-primary', href='/users/create') New
+            form.ml-auto(action='/users/search', method= 'GET')
+                input(type='text', name = 'q', class='p-2')
+                button(class='btn btn-primary ml-4') Search
 
-    div
-        a(href='/') Home
-        span &nbsp;
-        a(href='/users/create') Create
+        table.table.mt-4.ml-4
+            tr 
+                th Name 
+                th Phone
+                th 
+            each user in users                   
+                tr
+                    td= user.name
+                    td= user.phone
+                    td
+                        a(href= '/users/' + user.id) Infor
+        

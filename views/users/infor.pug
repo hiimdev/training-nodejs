@@ -2,14 +2,13 @@ extends ../layouts/common
 block title 
     title Infor Page
 block content
-    h1 Infor User 
-    p 
-        span Name: 
-        span= user.name
-        br
-        span Phone: 
-        span= user.phone 
-    br
-    a(href = '/users') Back
-        
-        
+    .container.mt-4
+        table.table 
+            tr 
+                th Name 
+                th Phone 
+                th ID 
+            tr 
+                td= user.name 
+                td= user.phone
+                td= user.id

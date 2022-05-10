@@ -2,17 +2,14 @@ extends ../layouts/common
 block title 
     title Create Page
 block content
-    h1 Create page
-    form(action='/users/create', method='POST')
-        lable Name 
-        input(type="text", name ='name') 
-        br
-        br
-        lable Phone 
-        input(type="text", name = 'phone')
-        br
-        br
-        button Create
-
-    br
-    a(href='/users') Back
+ 
+       
+    .container
+        form(action='/users/create', method='POST', class='p-4 d-flex flex-column col-sm-6' )
+            lable Name 
+            input(type="text", name ='name') 
+    
+            lable Phone 
+            input(type="text", name = 'phone')
+            br
+            button(class='btn btn-primary') Create
