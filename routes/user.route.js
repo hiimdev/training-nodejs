@@ -1,7 +1,7 @@
 var express = require('express');
 const shortid = require('shortid');
 
-var db = require('../db');
+var db = require('../db/db');
 
 var router = express.Router();
 
