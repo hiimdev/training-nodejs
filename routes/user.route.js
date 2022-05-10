@@ -6,7 +6,7 @@ var db = require('../db/db');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('users', {
+    res.render('./users/users', {
         users: db.get('users').value(),
     });
 });
@@ -19,20 +19,20 @@ router.get('/search', (req, res) => {
             (user) => user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1,
         );
 
-    res.render('users', {
+    res.render('./users/users', {
         users: matchUser,
     });
 });
 
 router.get('/create', (req, res) => {
-    res.render('create');
+    res.render('./users/create');
 });
 
 router.get('/:id', (req, res) => {
     var id = req.params.id;
     var user = db.get('users').find({ id: id }).value();
 
-    res.render('infor', {
+    res.render('./users/infor', {
         user: user,
     });
 });
