@@ -1,12 +1,8 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Home Page
-    body 
-        h1 Home Page
-        p Hello #{name}
-        a(href = 'users') Users
+extends ./layouts/common
+block title 
+    title Home Page
+block content
+    h1 Home Page
+    p Hello #{name}
+    a(href = 'users') Users
 

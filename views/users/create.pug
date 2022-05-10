@@ -1,22 +1,18 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Create Page
-    body 
-        h1 Create page
-        form(action='/users/create', method='POST')
-            lable Name 
-            input(type="text", name ='name') 
-            br
-            br
-            lable Phone 
-            input(type="text", name = 'phone')
-            br
-            br
-            button Create
-
+extends ../layouts/common
+block title 
+    title Create Page
+block content
+    h1 Create page
+    form(action='/users/create', method='POST')
+        lable Name 
+        input(type="text", name ='name') 
         br
-        a(href='/users') Back
+        br
+        lable Phone 
+        input(type="text", name = 'phone')
+        br
+        br
+        button Create
+
+    br
+    a(href='/users') Back
