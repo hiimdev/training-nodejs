@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title User Page
+    body 
+        h1 This is users
+        form(action='/users/search', method= 'GET')
+            input(type='text', name = 'q')
+            button Search
+        ul 
+            each user in users 
+                li
+                    span= user.name 
+                    span &nbsp;
+                    a(href= '/users/' + user.id) Infor
+            else 
+                p There are no matching users
+
+        div
+            a(href='/') Home
+        div
+            a(href='/users/create') Create
