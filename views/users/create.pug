@@ -4,12 +4,15 @@ block title
 block content
  
        
-    .container
+    .container.mt-4
+        if errors 
+            each error in errors 
+                .alert.alert-danger= error
         form(action='/users/create', method='POST', class='p-4 d-flex flex-column col-sm-6' )
             lable Name 
-            input(type="text", name ='name') 
+            input(type="text", name ='name', value= values ? values.name : '') 
     
             lable Phone 
-            input(type="text", name = 'phone')
+            input(type="text", name = 'phone', value= values ? values.phone : '')
             br
             button(class='btn btn-primary') Create

@@ -15,9 +15,7 @@ app.set('views', './views');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index', {
-        name: 'Huy',
-    });
+    res.render('index');
 });
 
 app.use('/users', userRouter);

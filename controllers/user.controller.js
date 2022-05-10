@@ -39,6 +39,24 @@ module.exports.getInfor = (req, res) => {
 module.exports.postCreate = (req, res) => {
     req.body.id = shortid.generate();
 
+    let errors = [];
+
+    if (!req.body.name) {
+        errors.push('User name is require!');
+    }
+
+    if (!req.body.phone) {
+        errors.push('User phone is require!');
+    }
+
+    if (errors.length) {
+        res.render('users/create', {
+            errors: errors,
+            values: req.body,
+        });
+        return;
+    }
+
     db.get('users').push(req.body).write();
     res.redirect('/users');
 };
