@@ -11,7 +11,7 @@ module.exports.index = (req, res) => {
 module.exports.search = (req, res) => {
     let q = req.query.q;
     let matchUser = db
-        .get('../db/db.json')
+        .get('users')
         .filter(
             (user) => user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1,
         );

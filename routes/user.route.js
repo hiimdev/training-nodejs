@@ -1,8 +1,9 @@
 var express = require('express');
 const controller = require('../controllers/user.controller');
 var router = express.Router();
+var authMiddleware = require('../middlewares/auth.middleware');
 
-router.get('/', controller.index);
+router.get('/', authMiddleware.requireAuth, controller.index);
 
 router.get('/search', controller.search);
 

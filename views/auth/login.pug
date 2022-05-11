@@ -1,0 +1,16 @@
+extends ../layouts/common
+block title 
+    title Login Page
+block content
+    .container.mt-4
+        if errors 
+            each error in errors 
+                .alert.alert-danger= error
+        h3(class='mb-4') Login 
+        form(action='login', method='POST', class='p-4 d-flex flex-column col-sm-6' )
+            lable Email 
+            input(type="email",name= 'email', value= values ? values.email : '')   
+            lable Password 
+            input(type="password", name='password', value= values ? values.password : '')
+            br
+            button(class='btn btn-primary') Login
